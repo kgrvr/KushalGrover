@@ -1,6 +1,5 @@
 @import './variables';
 @import url($font-import);
-
 * {
     box-sizing: border-box;
 }
@@ -37,7 +36,7 @@ a {
     padding: $card-padding;
     /* Card flipping effects */
     transform-style: preserve-3d;
-    transition: 0.6s; 
+    transition: 0.6s;
 }
 
 .inner {
@@ -48,7 +47,7 @@ a {
     background-position: center top;
     transition: 2s;
     opacity: 1;
-    > .inner-block {
+    >.inner-block {
         @extend .center;
         border: $inner-block-border;
         width: $inner-block-width;
@@ -61,11 +60,11 @@ a {
         .small {
             padding-top: 10px;
         }
-        > .inner-block-top {
+        >.inner-block-top {
             transition: $transition;
         }
     }
-    > .inner-bottom {
+    >.inner-bottom {
         position: absolute;
         left: 50%;
         bottom: 0;
@@ -73,27 +72,39 @@ a {
         width: 100%;
         transform: translateX(-50%);
         transition: $transition;
-        > .link-spacing {
+        >.link-spacing {
             padding-right: 10px;
         }
     }
 }
+
 .inner:hover {
     transition: $transition;
-    > .inner-bottom {
+    >.inner-bottom {
         bottom: 10%;
         opacity: 1;
         transition: $transition;
     }
 }
 
-.flip-card .card, .back {
+.flip-card .card {
     background-color: $card-background-color;
     transform: rotateX(-180deg) translateZ(1px);
-  > .inner {
-      transition: 0.1s;
-      opacity: 0;
-  }
+    > .inner {
+        transition: 0.1s;
+        opacity: 0;
+    }
+    > .back {
+        transition-delay: 0.6s;
+        opacity: 1;
+        pointer-events: unset;
+        transform: rotateX(-180deg) translateZ(1px);
+    }        
+}
+
+.back {
+    pointer-events: none;
+    opacity: 0;
 }
 
 .center {
@@ -112,7 +123,7 @@ a {
 }
 
 @media (max-width:700px) {
-    .card { 
+    .card {
         transform: scale(.5);
     }
 }

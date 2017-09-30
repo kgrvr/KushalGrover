@@ -9,7 +9,7 @@ export class AppComponent {
   
   linkClicked() {
     var ele = document.getElementById('card');
-    ele.classList.add('flip-card');
+    ele.classList.toggle('flip-card');
   }
 
 }
