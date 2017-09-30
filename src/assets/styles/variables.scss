@@ -1,1 +1,28 @@
+$font-import: 'https://fonts.googleapis.com/css?family=Encode+Sans+Expanded';
+$font-family: 'Encode Sans Expanded', sans-serif;
+
+$white: #fff;
+
 $body-bg-color: #D1D6CF;
+$transition: 0.3s;
+
+$container-text-transform: uppercase;
+
+$card-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+$card-background-color: #E9E9E7;
+$card-height: 420px;
+$card-width: 640px;
+$card-text-align: center;
+$card-padding: 25px;
+
+$inner-background-image: "https://images.unsplash.com/uploads/141158932215206ac23f6/ec26a109?dpr=1&auto=compress,format&fit=crop&w=1500&h=&q=80&cs=tinysrgb&crop=";
+$inner-background-image-darken: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+$inner-text-color: $white;
+
+$inner-block-border: 2px solid #fff;
+$inner-block-width: 420px;
+$inner-block-height: 100px;
+$inner-block-font-size: xx-large;
+
+$inner-block-hover-height: 175px;
+$inner-block-top-transform: -35px;

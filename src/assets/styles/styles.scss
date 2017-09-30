@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded');
 @import './variables';
+@import url($font-import);
 
 * {
     box-sizing: border-box;
@@ -13,57 +13,56 @@ body {
     background-color: $body-bg-color;
     min-height: 100%;
     overflow: hidden;
-    font-family: 'Encode Sans Expanded', sans-serif;
+    font-family: $font-family;
 }
 
 .container {
     @extend .center;
     perspective: 800px;
-    /* Styling */
-    text-transform: uppercase;
+    text-transform: $container-text-transform;
     letter-spacing: 4px;
 }
 
 .card {
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: #E9E9E7;
-    transition: 0.3s;
+    box-shadow: $card-shadow;
+    background-color: $card-background-color;
+    transition: $transition;
     margin: auto;
-    text-align: center;
-    height: 420px;
-    width: 640px;
-    padding: 25px;
+    text-align: $card-text-align;
+    height: $card-height;
+    width: $card-width;
+    padding: $card-padding;
     >.inner {
         height: 100%;
         width: 100%;
-        color: #fff;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://images.unsplash.com/uploads/141158932215206ac23f6/ec26a109?dpr=1&auto=compress,format&fit=crop&w=1500&h=&q=80&cs=tinysrgb&crop=");
+        color: $inner-text-color;
+        background-image: $inner-background-image-darken, url($inner-background-image);
         background-position: center top;
         text-align: center;
         > .inner-block {
             @extend .center;
-            border: 2px solid #fff;
-            width: 420px;
-            height: 100px;
-            font-size: xx-large;
+            border: $inner-block-border;
+            width: $inner-block-width;
+            height: $inner-block-height;
+            font-size: $inner-block-font-size;
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: 0.3s;
+            transition: $transition;
             .small {
                 padding-top: 10px;
             }
             > .inner-block-top {
-                transition: 0.3s;
+                transition: $transition;
             }
         }
         > .inner-block:hover {
-            transition: 0.3s;
-            height: 175px;
-            transition: 0.3s;
+            transition: $transition;
+            height: $inner-block-hover-height;
+            transition: $transition;
             > .inner-block-top {
-                transform: translateY(-35px);
-                transition: 0.3s;
+                transform: translateY($inner-block-top-transform);
+                transition: $transition;
             }
         }
     }
@@ -80,4 +79,8 @@ body {
     font-size: small;
 }
 
-@media only screen and (max-width: 768px) {}
+@media (max-width:700px) {
+    .card { 
+        transform: scale(.5);
+    }
+}
