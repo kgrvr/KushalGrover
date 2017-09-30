@@ -40,14 +40,30 @@ body {
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://images.unsplash.com/uploads/141158932215206ac23f6/ec26a109?dpr=1&auto=compress,format&fit=crop&w=1500&h=&q=80&cs=tinysrgb&crop=");
         background-position: center top;
         text-align: center;
-        > .inner-text {
+        > .inner-block {
             @extend .center;
             border: 2px solid #fff;
             width: 420px;
-            padding: 30px;
+            height: 100px;
             font-size: xx-large;
-            > .small {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            .small {
                 padding-top: 10px;
+            }
+            > .inner-block-top {
+                transition: 0.3s;
+            }
+        }
+        > .inner-block:hover {
+            transition: 0.3s;
+            height: 175px;
+            transition: 0.3s;
+            > .inner-block-top {
+                transform: translateY(-35px);
+                transition: 0.3s;
             }
         }
     }
