@@ -1,6 +1,30 @@
 @import './variables';
 
-body {
-    background-color: $body-bg-color;
+html {
+    height: 100%;
 }
 
+body {
+    background-color: $body-bg-color;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.card {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
+    margin: 15px;
+    position: absolute;
+    height: 75%;
+    width: 75%;
+}
+
+@media only screen and (max-width : 768px) {
+    .card {
+        height: 95%;
+        width: 93%;
+    }
+}
