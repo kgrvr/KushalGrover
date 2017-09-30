@@ -1,4 +1,4 @@
-# Angular 4 using Angular CLI + Webpack+ Normalize.CSS + SCSS
+# KushalGrover
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
 
