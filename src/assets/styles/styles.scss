@@ -16,11 +16,14 @@ body {
     font-family: $font-family;
 }
 
+a {
+    cursor: pointer;
+}
+
 .container {
     @extend .center;
     perspective: 800px;
     text-transform: $container-text-transform;
-    letter-spacing: 4px;
 }
 
 .card {
@@ -44,7 +47,7 @@ body {
             border: $inner-block-border;
             width: $inner-block-width;
             height: $inner-block-height;
-            font-size: $inner-block-font-size;
+            letter-spacing: $inner-block-letter-spacing;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -56,14 +59,26 @@ body {
                 transition: $transition;
             }
         }
-        > .inner-block:hover {
+        > .inner-bottom {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            opacity: 0;
+            width: 100%;
+            transform: translateX(-50%);
             transition: $transition;
-            height: $inner-block-hover-height;
-            transition: $transition;
-            > .inner-block-top {
-                transform: translateY($inner-block-top-transform);
-                transition: $transition;
+            > .link-spacing {
+                padding-right: 10px;
             }
+        }
+    }
+    .inner:hover {
+        box-shadow: $card-shadow;
+        transition: $transition;
+        > .inner-bottom {
+            bottom: 10%;
+            opacity: 1;
+            transition: $transition;
         }
     }
 }
@@ -73,6 +88,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.xx-large {
+    font-size: $inner-block-font-size;
 }
 
 .small {
