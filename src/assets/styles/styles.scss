@@ -1,25 +1,64 @@
 @import './variables';
 
+* { 
+    box-sizing: border-box; 
+}
+
 html {
     height: 100%;
 }
 
-body {
+body { 
     background-color: $body-bg-color;
     min-height: 100%;
     overflow: hidden;
 }
 
+.container {
+  perspective: 800px;
+  
+  /* Styling */  
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  
+  /* Center it */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .card {
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    background-color: #1C2632;
     transition: 0.3s;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: auto;
     text-align: center;
-    margin: 15px;
+    height: 350px;
+    width: 550px;
+    padding: 15px;
+}
+
+.strip {
+    background-color: #DD2034;
+    display: block;
+    height: 50px;
     position: absolute;
-    height: 75%;
-    width: 75%;
+    &.top {
+        width: 50px;
+        top: 0;
+        left: 50%;
+    }
+    &.bottom {
+        width: 550px;
+        bottom: 0;
+        left: 0;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
 }
 
 @media only screen and (max-width : 768px) {
