@@ -35,52 +35,65 @@ a {
     height: $card-height;
     width: $card-width;
     padding: $card-padding;
-    >.inner {
-        height: 100%;
-        width: 100%;
-        color: $inner-text-color;
-        background-image: $inner-background-image-darken, url($inner-background-image);
-        background-position: center top;
-        text-align: center;
-        > .inner-block {
-            @extend .center;
-            border: $inner-block-border;
-            width: $inner-block-width;
-            height: $inner-block-height;
-            letter-spacing: $inner-block-letter-spacing;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: $transition;
-            .small {
-                padding-top: 10px;
-            }
-            > .inner-block-top {
-                transition: $transition;
-            }
-        }
-        > .inner-bottom {
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            opacity: 0;
-            width: 100%;
-            transform: translateX(-50%);
-            transition: $transition;
-            > .link-spacing {
-                padding-right: 10px;
-            }
-        }
-    }
-    .inner:hover {
-        box-shadow: $card-shadow;
+    /* Card flipping effects */
+    transform-style: preserve-3d;
+    transition: 0.6s; 
+}
+
+.inner {
+    height: 100%;
+    width: 100%;
+    color: $inner-text-color;
+    background-image: $inner-background-image-darken, url($inner-background-image);
+    background-position: center top;
+    transition: 2s;
+    opacity: 1;
+    > .inner-block {
+        @extend .center;
+        border: $inner-block-border;
+        width: $inner-block-width;
+        height: $inner-block-height;
+        letter-spacing: $inner-block-letter-spacing;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         transition: $transition;
-        > .inner-bottom {
-            bottom: 10%;
-            opacity: 1;
+        .small {
+            padding-top: 10px;
+        }
+        > .inner-block-top {
             transition: $transition;
         }
     }
+    > .inner-bottom {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+        width: 100%;
+        transform: translateX(-50%);
+        transition: $transition;
+        > .link-spacing {
+            padding-right: 10px;
+        }
+    }
+}
+.inner:hover {
+    transition: $transition;
+    > .inner-bottom {
+        bottom: 10%;
+        opacity: 1;
+        transition: $transition;
+    }
+}
+
+.flip-card .card, .back {
+    background-color: $card-background-color;
+    transform: rotateX(-180deg) translateZ(1px);
+  > .inner {
+      transition: 0.1s;
+      opacity: 0;
+  }
 }
 
 .center {

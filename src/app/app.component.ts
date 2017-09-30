@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  title = 'app';
+  
+  linkClicked() {
+    var ele = document.getElementById('card');
+    ele.classList.add('flip-card');
+  }
+
 }
