@@ -10,14 +10,14 @@
         </div>
       </div>
       <div class="inner-bottom">
-        <a (click)="linkClicked()" class="link-spacing">About Me</a>
-        <a (click)="linkClicked()" class="link-spacing">My Projects</a>
-        <a (click)="linkClicked()">Contact Me</a>
+        <a (click)="linkClicked('about-me')" class="link-spacing">About Me</a>
+        <a (click)="linkClicked('my-projects')" class="link-spacing">My Projects</a>
+        <a (click)="linkClicked('contact-me')">Contact Me</a>
       </div>
     </div>
     <div class="back">
       <div class="inner-back">
-        <div>ABCD</div>
+        <div><ng-template #backContainer></ng-template></div>
         <div class="inner-bottom">
             <a (click)="linkClicked()">Back</a>
         </div>
