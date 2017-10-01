@@ -34,12 +34,24 @@ a {
     height: $card-height;
     width: $card-width;
     padding: $card-padding;
-    /* Card flipping effects */
+    -webkit-transition: -webkit-transform 0.6s;
+    -moz-transition: -moz-transform 0.6s;
+    -o-transition: -o-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    transition: 0.6s;
+    -webkit-transform-origin: 50% 50%;
+    div {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
 }
 
-.inner {
+.front {
     height: 100%;
     width: 100%;
     color: $inner-text-color;
@@ -47,6 +59,7 @@ a {
     background-position: center top;
     transition: 2s;
     opacity: 1;
+    display: block;
     > .inner-block {
         @extend .center;
         border: $inner-block-border;
@@ -65,20 +78,23 @@ a {
         }
     }
     > .inner-bottom {
-        position: absolute;
-        left: 50%;
-        bottom: 0;
         opacity: 0;
-        width: 100%;
-        transform: translateX(-50%);
-        transition: $transition;
-        >.link-spacing {
-            padding-right: 10px;
-        }
     }
 }
 
-.inner:hover {
+.inner-bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    transform: translateX(-50%);
+    transition: $transition;
+    >.link-spacing {
+        padding-right: 10px;
+    }
+}
+
+.front:hover {
     transition: $transition;
     >.inner-bottom {
         bottom: 10%;
@@ -89,40 +105,35 @@ a {
 
 .flip-card .card {
     background-color: $card-background-color;
-    transform: rotateX(-180deg) translateZ(1px);
-    > .inner {
-        transition: 0.1s;
-        opacity: 0;
-        > .inner-block {
-            opacity: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-        > .inner-bottom { 
-            opacity: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-    }
+    -webkit-transform: rotateX( 180deg );
+    -moz-transform: rotateX( 180deg );
+    -o-transform: rotateX( 180deg );
+    transform: rotateX( 180deg );
     > .back {
+        opacity: 1;
+        pointer-events: unset;
         transition-delay: 0.6s;
         transition: $transition;
-        opacity: 1;
-        z-index: 10;
-        pointer-events: unset;
         transform: rotateX(-180deg) translateZ(1px);
-        > div {
-            @extend .center;
-            height: 100%;
-            width: 100%;
-            color: #000;
-        }
     }        
+    .front {
+        display: none;
+    }
+    > .inner-bottom {
+        opacity: 1;
+    }
 }
 
 .back {
-    pointer-events: none;
+    height: 100%;
+    width: 100%;
     opacity: 0;
+    pointer-events: none;
+    > .inner-back {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
 }
 
 .center {

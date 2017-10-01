@@ -1,6 +1,6 @@
 <div id="card" class="container">
   <div class="card">
-    <div class="inner">
+    <div class="front">
       <div class="inner-block">
         <div class="inner-block-top">
           <span class="xx-large">Kushal Grover</span>
@@ -16,8 +16,11 @@
       </div>
     </div>
     <div class="back">
-      <div>
-        <button (click)="linkClicked()">Back</button>
+      <div class="inner-back">
+        <div>ABCD</div>
+        <div class="inner-bottom">
+            <a (click)="linkClicked()">Back</a>
+        </div>
       </div>
     </div>
   </div>
