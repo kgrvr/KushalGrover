@@ -56,7 +56,7 @@ a {
     width: 100%;
     color: $inner-text-color;
     background-image: $inner-background-image-darken, url($inner-background-image);
-    background-position: center top;
+    background-position: center center;
     transition: 2s;
     opacity: 1;
     display: block;
@@ -129,6 +129,7 @@ a {
     width: 100%;
     opacity: 0;
     pointer-events: none;
+    display: flex;
     > .inner-back {
         width: 100%;
         height: 100%;
