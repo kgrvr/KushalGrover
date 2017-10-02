@@ -17,6 +17,9 @@ body {
 
 a {
     cursor: pointer;
+    text-decoration: none;
+    border-bottom: none;
+    transition: $transition;
 }
 
 .container {
