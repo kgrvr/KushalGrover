@@ -1,0 +1,30 @@
+.list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    .list-item {
+        padding: 5px;
+        font-size: larger;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+            background-color: lighten(#D6D5DB, 10%);
+            border-bottom: 1px solid #f8f8f8;
+            border-top: 1px solid #f8f8f8;
+            padding: 15px;
+            &:first-child {
+                border: none;
+                border-bottom: 1px solid #f8f8f8;
+            }
+            &:last-child {
+                border: none;
+                border-top: 1px solid #f8f8f8;
+            }
+        }
+        a {
+            height: 100%;
+            width: 100%;
+            color: #131313;
+        }
+    }
+}
