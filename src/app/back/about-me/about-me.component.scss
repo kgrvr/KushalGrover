@@ -1,0 +1,18 @@
+.quote {
+    font-style: italic;
+    text-transform: none;
+    &::before {
+        content: '\201C'
+    }
+    &::after {
+        content: '\201D'
+    }
+}
+
+a {
+    color: #131313;
+    &:hover {
+        border-bottom: 1px solid #131313;
+        transition: 0.3s;
+    }
+}
