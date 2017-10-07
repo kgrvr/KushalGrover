@@ -14,7 +14,8 @@ import { OpenInNewTabDirective } from './open-in-new-tab/open-in-new-tab.directi
     OpenInNewTabDirective
   ],
   exports: [
-    ListItemComponent
+    ListItemComponent,
+    OpenInNewTabDirective
   ]
 })
 export class UtilsModule { }
