@@ -1,5 +1,5 @@
 <ul class="list text-center">
   <li *ngFor="let p of projects" class="list-item">
-    <a href="p.link">{{ p.name }}</a>
+    <a [href]="p.src" openInNewTab>{{ p.name }}</a>
   </li>
 </ul>

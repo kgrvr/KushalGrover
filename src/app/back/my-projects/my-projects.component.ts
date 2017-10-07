@@ -7,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProjectsComponent implements OnInit {
 
+  private projects = [
+    {
+      name: 'My Website',
+      src: 'https://github.com/kgrvr/KushalGrover'
+    },
+    {
+      name: 'Rainbow Weather',
+      src: 'https://github.com/kgrvr/Rainbow-Weather-App'
+    },
+    {
+      name: 'More on my Github',
+      src: 'https://github.com/kgrvr/'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit() {

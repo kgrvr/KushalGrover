@@ -155,6 +155,19 @@ a {
     font-size: small;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.vertical-center {
+    text-align: left;
+    top: 50%;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    text-transform: initial;
+}
+
 @media (max-width:700px) {
     .card {
         transform: scale(.5);
