@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ListItemComponent implements OnInit {
 
   @Input()
-  private projects: any[] = [];
+  projects: any[] = [];
 
   constructor() { }
 

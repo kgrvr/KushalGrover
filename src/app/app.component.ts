@@ -19,7 +19,7 @@ import { ContactMeComponent } from './back/contact-me/contact-me.component';
   entryComponents: [AboutMeComponent, MyProjectsComponent, ContactMeComponent],
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
 
   @ViewChild('backContainer', { read: ViewContainerRef }) backContainer;
   private _backComponentRef: ComponentRef<{}>;
@@ -31,26 +31,28 @@ export class AppComponent {
   }
 
   linkClicked(component?: string) {
-    var ele = document.getElementById('card');
+    const ele = document.getElementById('card');
     ele.classList.toggle('flip-card');
     if (component) {
       switch (component) {
-        case 'about-me' : 
+        case 'about-me':
           this.createComponent(AboutMeComponent);
-        break;
-        case 'my-projects' :
+          break;
+        case 'my-projects':
           this.createComponent(MyProjectsComponent);
-        break;
-        case 'contact-me' :
+          break;
+        case 'contact-me':
           this.createComponent(ContactMeComponent);
-        break;
+          break;
       }
+    } else {
+      this._backComponentRef.destroy();
     }
   }
 
   createComponent(component) {
     this.backContainer.clear();
-    var componentFactory: ComponentFactory<{}> = this._componentFactoryResolver.resolveComponentFactory(component);
+    const componentFactory: ComponentFactory<{}> = this._componentFactoryResolver.resolveComponentFactory(component);
     this._backComponentRef = this.backContainer.createComponent(componentFactory);
   }
 

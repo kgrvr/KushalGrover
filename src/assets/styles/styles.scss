@@ -31,21 +31,22 @@ a {
 .card {
     box-shadow: $card-shadow;
     background-color: $card-background-color;
-    transition: $transition;
     margin: auto;
     text-align: $card-text-align;
     height: $card-height;
     width: $card-width;
     padding: $card-padding;
-    -webkit-transition: -webkit-transform 0.6s;
-    -moz-transition: -moz-transform 0.6s;
-    -o-transition: -o-transform 0.6s;
-    transition: transform 0.6s;
+    -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: -moz-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -o-transition: -o-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transform-origin: 50% 50%;
+	transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	border-radius: 6px;
     div {
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
@@ -63,7 +64,7 @@ a {
     transition: 2s;
     opacity: 1;
     display: block;
-    > .inner-block {
+    >.inner-block {
         @extend .center;
         border: $inner-block-border;
         width: $inner-block-width;
@@ -80,7 +81,7 @@ a {
             transition: $transition;
         }
     }
-    > .inner-bottom {
+    >.inner-bottom {
         opacity: 0;
     }
 }
@@ -108,21 +109,20 @@ a {
 
 .flip-card .card {
     background-color: $card-background-color;
-    -webkit-transform: rotateX( 180deg );
-    -moz-transform: rotateX( 180deg );
-    -o-transform: rotateX( 180deg );
-    transform: rotateX( 180deg );
-    > .back {
+    -webkit-transform: rotateX( 180deg);
+    -moz-transform: rotateX( 180deg);
+    -o-transform: rotateX( 180deg);
+    transform: rotateX( 180deg);
+    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    >.back {
         opacity: 1;
         pointer-events: unset;
-        transition-delay: 0.6s;
-        transition: $transition;
-        transform: rotateX(-180deg) translateZ(1px);
-    }        
+        transform: rotateX(-180deg);
+    }
     .front {
         display: none;
     }
-    > .inner-bottom {
+    >.inner-bottom {
         opacity: 1;
     }
 }
@@ -133,18 +133,11 @@ a {
     opacity: 0;
     pointer-events: none;
     display: flex;
-    > .inner-back {
+    >.inner-back {
         width: 100%;
         height: 100%;
         display: block;
     }
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .xx-large {
@@ -168,8 +161,33 @@ a {
     text-transform: initial;
 }
 
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @media (max-width:700px) {
     .card {
-        transform: scale(.5);
+        width: $card-height;
+        height: $card-width;
+        transform: scale(.9);
+    }
+    .front .inner-bottom {
+        bottom: 10%;
+        opacity: 1;
+    }
+    .flip-card .card {
+        transform: scale(.9) rotateX( 180deg);
+    }
+}
+
+@media (max-width:420px) {
+    .card {
+        transform: scale(.8);
+    }
+    .flip-card .card {
+        transform: scale(.8) rotateX( 180deg);
     }
 }

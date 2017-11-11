@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProjectsComponent implements OnInit {
 
-  private projects = [
+  public projects = [
     {
       name: 'My Website',
       src: 'https://github.com/kgrvr/KushalGrover'
@@ -20,7 +20,18 @@ export class MyProjectsComponent implements OnInit {
       name: 'More on my Github',
       src: 'https://github.com/kgrvr/'
     }
-  ]
+  ];
+
+  public articles = [
+    {
+      name: 'Reading Local JSON present in an Angular 2 project',
+      src: 'https://medium.com/@kgrvr/reading-local-json-present-in-an-angular-2-project-733bc3dda18e'
+    },
+    {
+      name: 'More on my Medium',
+      src: 'https://medium.com/@kgrvr/'
+    }
+  ];
 
   constructor() { }
 
