@@ -10,8 +10,8 @@ export class OpenInNewTabDirective {
   @HostListener('click', ['$event'])
   onClick(event: MouseEvent) {
     event.preventDefault();
-    var target = event.target || event.srcElement;
-    if(target instanceof HTMLAnchorElement) {
+    const target = event.target || event.srcElement;
+    if (target instanceof HTMLAnchorElement) {
       window.open(target.href);
     }
   }

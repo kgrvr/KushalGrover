@@ -1,6 +1,6 @@
 {
-  "name": "angular-4-using-angular-cli-webpack-normalize.css-scss",
-  "version": "0.0.0",
+  "name": "kushal-grover",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -14,28 +14,28 @@
     "start": "node server.js"
   },
   "engines": {
-    "node": "6.11.1",
-    "npm": "3.10.9"
+    "node": "8.9.0",
+    "npm": "5.5.1"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.2.4",
-    "@angular/cli": "1.4.3",
-    "@angular/compiler-cli": "^4.2.4",
-    "@angular/common": "^4.2.4",
-    "@angular/compiler": "^4.2.4",
-    "@angular/core": "^4.2.4",
-    "@angular/forms": "^4.2.4",
-    "@angular/http": "^4.2.4",
-    "@angular/platform-browser": "^4.2.4",
-    "@angular/platform-browser-dynamic": "^4.2.4",
-    "@angular/router": "^4.2.4",
-    "core-js": "^2.4.1",
-    "express": "^4.16.2",
-    "normalize.css": "^7.0.0",
-    "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14",
-    "typescript": "~2.3.3"
+    "@angular/animations": "5.0.1",
+    "@angular/cli": "1.5.0",
+    "@angular/compiler-cli": "5.0.1",
+    "@angular/common": "5.0.1",
+    "@angular/compiler": "5.0.1",
+    "@angular/core": "5.0.1",
+    "@angular/forms": "5.0.1",
+    "@angular/http": "5.0.1",
+    "@angular/platform-browser": "5.0.1",
+    "@angular/platform-browser-dynamic": "5.0.1",
+    "@angular/router": "5.0.1",
+    "core-js": "2.5.1",
+    "express": "4.16.2",
+    "normalize.css": "7.0.0",
+    "rxjs": "5.5.2",
+    "zone.js": "0.8.18",
+    "typescript": "2.4.2"
   },
   "devDependencies": {
     "@angular/language-service": "^4.2.4",
